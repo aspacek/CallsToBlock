@@ -10,7 +10,9 @@ import csv
 import matplotlib.pyplot as plt
 
 # Input and output files
-input_file = 'BlockedCalls_without296_last100.txt'
+#input_file = 'BlockedCalls.txt'
+input_file = 'BlockedCalls_without296.txt'
+#input_file = 'BlockedCalls_without296_last100.txt'
 output_file = 'BlockedCalls.png'
 
 # Read in data
@@ -30,7 +32,7 @@ print('')
 # First we have possibilities from 650-000-0000 to 650-999-9999
 full_range = 9999999+1
 # Bin width of 100,000 means 650-[0-9][0-9]X-XXXX
-bin_width = 200000
+bin_width = 20000
 nbins = int(full_range/bin_width)
 # Print some details
 print('Full number range = '+str(full_range))
@@ -56,8 +58,8 @@ counts.sort()
 counts[:] = counts[::-1]
 
 # Print results
-print('Assuming 2,400,000 calls can be blocked')
-blocked_bins = int(2400000/bin_width)
+print('Assuming 1,000,000 calls can be blocked')
+blocked_bins = int(1000000/bin_width)
 print('You can block the top'+' '+str(blocked_bins)+' bins')
 blocked_counts = np.sum(counts[:blocked_bins])
 print('This accounts for '+str(blocked_counts/np.sum(counts)*100)+' % of the blocked numbers')
