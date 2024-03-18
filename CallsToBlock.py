@@ -32,7 +32,7 @@ print('')
 # First we have possibilities from 650-000-0000 to 650-999-9999
 full_range = 9999999+1
 # Bin width of 100,000 means 650-[0-9][0-9]X-XXXX
-bin_width = 20000
+bin_width = 40000
 nbins = int(full_range/bin_width)
 # Print some details
 print('Full number range = '+str(full_range))
@@ -58,8 +58,8 @@ counts.sort()
 counts[:] = counts[::-1]
 
 # Print results
-print('Assuming 1,000,000 calls can be blocked')
-blocked_bins = int(1000000/bin_width)
+print('Assuming 2,000,000 calls can be blocked')
+blocked_bins = int(2000000/bin_width)
 print('You can block the top'+' '+str(blocked_bins)+' bins')
 blocked_counts = np.sum(counts[:blocked_bins])
 print('This accounts for '+str(blocked_counts/np.sum(counts)*100)+' % of the blocked numbers')
