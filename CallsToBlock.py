@@ -10,9 +10,17 @@ import csv
 import matplotlib.pyplot as plt
 
 # Input and output files
+
+# BlockedCalls.txt - List of all blocked phone numbers
 #input_file = 'BlockedCalls.txt'
+
+# BlockedCalls_without296.txt - List of all blocked phone numbers not starting with area code 296
 input_file = 'BlockedCalls_without296.txt'
+
+# BlockedCalls_without296_last100.txt - The 100 most recent phone numbers not starting with area code 296
 #input_file = 'BlockedCalls_without296_last100.txt'
+
+# Name of output plot file
 output_file = 'BlockedCalls.png'
 
 # Read in data
